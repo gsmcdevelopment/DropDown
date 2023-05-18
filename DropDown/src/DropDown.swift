@@ -104,6 +104,7 @@ public final class DropDown: UIView {
     /// The view to which the drop down will displayed onto.
     public weak var anchorView: AnchorView? {
         didSet {
+            topOffset = CGPoint(x: 0, y: -(anchorView?.plainView.frame.height  ?? 0))
             bottomOffset = CGPoint(x: 0, y: (anchorView?.plainView.frame.height  ?? 0))
             setNeedsUpdateConstraints()
         }
